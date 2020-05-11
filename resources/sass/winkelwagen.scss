@@ -1,0 +1,122 @@
+//Styling winkelwagen//
+.param {
+    margin-bottom: 7px;
+    line-height: 1.4;
+}
+.param-inline dt {
+    display: inline-block;
+}
+.param dt {
+    margin: 0;
+    margin-right: 7px;
+    font-weight: 600;
+}
+.param-inline dd {
+    vertical-align: baseline;
+    display: inline-block;
+}
+
+.param dd {
+    margin: 0;
+    vertical-align: baseline;
+} 
+
+.shopping-cart-wrap .price {
+    color: #007bff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 5px;
+    display: block;
+}
+var {
+    font-style: normal;
+}
+
+.media img {
+    margin-right: 1rem;
+}
+.img-sm {
+    width: 90px;
+    max-height: 75px;
+    object-fit: cover;
+}
+.artikelnummer{
+    font-size: 11px;
+    font-weight: 100;
+}
+
+//Styling producten//
+.card-product .img-wrap {
+    border-radius: 3px 3px 0 0;
+    overflow: hidden;
+    position: relative;
+    height: 220px;
+    text-align: center;
+}
+.card-product .img-wrap img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+.card-product .info-wrap {
+    overflow: hidden;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+.card-product .bottom-wrap {
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+.label-rating { margin-right:10px;
+    color: #333;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.card-product .price-old {
+    color: #999;
+}
+
+//Styling productinformatie//
+.gallery-wrap .img-big-wrap img {
+    height: 450px;
+    width: 100%;
+    display: inline-block;
+    cursor: zoom-in;
+}
+
+.gallery-wrap .img-small-wrap .item-gallery {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #ddd;
+    margin: 7px 2px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.gallery-wrap .img-small-wrap {
+    text-align: center;
+}
+.gallery-wrap .img-small-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: zoom-in;
+}
+// Large devices (desktops, 992px and up)
+@media screen and (max-width: 1004px) { 
+   .productinfo{width: 960px;}
+ }
+ .updtbtn{
+     width: 90px;
+     margin-bottom: 10px;
+ }
+ 
+
+ @media screen and (max-width: 767px) {
+    .aantalselect option{
+        width: 70px !important;   
+    }
+ }

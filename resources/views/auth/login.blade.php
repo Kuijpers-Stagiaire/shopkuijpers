@@ -1,73 +1,89 @@
-@extends('layouts.app')
-
+@extends('layouts.login')
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+<div class="login-container">
+    <div class="login-section-left">
+        <div class="login-section-left-1">
+            <div class="login-section-left-1-header-1">
+                <div style="margin-top: -30px;">
+                    <img src="{{ asset('img/logo-small.png') }}" width="50">
+                </div>
+                <div>
+                    <p>Kuijpers</p>
+                    <p class="small">Energieneutrale en gezonde installaties</p>
                 </div>
             </div>
+            <div class="login-section-left-1-header-2">
+                <div style="margin-top: -30px;">
+                    <img src="{{ asset('img/icons/icon-512x512.png') }}" width="50">
+                </div>
+                <div>
+                    <p>Shopkuijpers</p>
+                    <p class="small">Levering Producten</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="login-section-left-2">
+            <?php
+                    // I'm India so my timezone is Asia/Calcutta
+                    date_default_timezone_set('Europe/Amsterdam');
+
+                    // 24-hour format of an hour without leading zeros (0 through 23)
+                    $Hour = date('G');
+
+                    if ( $Hour >= 5 && $Hour <= 11 ) {
+                        echo "<p class='big'>Goedemorgen!</p>";
+                    } else if ( $Hour >= 12 && $Hour <= 18 ) {
+                        echo "<p class='big'>Goedemiddag!</p>";
+                    } else if ( $Hour >= 19 || $Hour <= 4 ) {
+                        echo "<p class='big'>Goedenavond!</p>";
+                    }
+                    ?>
+            <form action="{{ route('login') }}" method="post">
+                @csrf
+                <div class="form-group">
+                    <div class="input-group">
+                        <input aria-label="E-mail adres" id="email" type="email" placeholder="E-Mail"
+                            class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
+                            value="{{ old('email') }}" autofocus>
+                    </div>
+                    @if ($errors->has('email'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ $errors->first('email') }}
+                    </div>
+                    @endif
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input aria-label="Wachtwoord" id="password" type="password" placeholder="Wachtwoord"
+                            name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
+                            name="password">
+                    </div>
+                    @if ($errors->has('password'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ $errors->first('password') }}
+                    </div>
+                    @endif
+                </div>
+                <br>
+                <button aria-label="Inloggen" type="submit" class="btn btn-lg login" name="submit" id="myBtn"
+                    data-toggle="popup1">
+                    {{ __('Inloggen') }}
+                </button>
+            </form>
+        </div>
+        <div class="login-section-left-3">
+            <p class="small">®Kuijpers 2019</p>
+        </div>
+        <div class="login-section-left-4">
+            @if (Route::has('password.request'))
+            <a class="btn btn-link forgot" href="{{ route('password.request') }}">
+                {{ __('Wachtwoord vergeten?') }}
+            </a>
+            @endif
         </div>
     </div>
 </div>
+
 @endsection

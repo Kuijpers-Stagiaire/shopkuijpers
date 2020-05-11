@@ -6,3 +6,24 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Custom Css
+@import 'login';
+@import 'footer';
+@import 'products';
+@import 'winkelwagen';
+@import 'Winkelwagen_nav';
+
+// Font Awesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+@import '~@fortawesome/fontawesome-free/scss/regular';
+@import '~@fortawesome/fontawesome-free/scss/solid';
+@import '~@fortawesome/fontawesome-free/scss/brands';
+
+//JQuery
+@import '~jquery-ui/themes/base/all.css';
+
+html, body{
+    height: 100%;
+    min-height: 100vh;
+}
