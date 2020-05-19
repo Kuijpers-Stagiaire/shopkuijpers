@@ -18,13 +18,12 @@
 					<th scope="col" width="120">Aantal</th>
 					<th scope="col" width="120">Prijs</th>
 					<th scope="col" width="120">Totaal</th>
-					<th scope="col" width="200" class="text-right">Actie</th>
 				</tr>
 			</thead>
 			<tbody>
 				<?php $total = 0 ?>
-				@if (isset($getBasket))
-				@foreach($getBasket as $getBasketItem)
+				@if (isset($Bestelling))
+				@foreach($Bestelling as $getBasketItem)
 				<tr>
 					<td>
 						<figure class="media">
@@ -44,7 +43,7 @@
 							</div>
 						</div>
 						--}}
-						<select class="form-control aantalselect" onchange="window.location = '/winkelwagen/update/{{$getBasketItem->product_id}}/'+ this.value ">
+						{{-- <select class="form-control aantalselect" onchange="window.location = '/winkelwagen/update/{{$getBasketItem->product_id}}/'+ this.value ">
 							@for ($i = 0; $i <= $getBasketItem->product_aantal; $i++)
 							@if($i == $getBasketItem->aantal)
 							<option selected value="{{$i}}">{{$i}}</option>
@@ -52,7 +51,8 @@
 							<option value="{{$i}}">{{$i}}</option>
 							@endif
 							@endfor
-						</select>
+                        </select> --}}
+                        <label>{{$getBasketItem->aantal}}</label>
 					</td>
 					<td>
 						<div class="price-wrap"> 
@@ -68,9 +68,6 @@
 						</div>
 						<!-- (total)price-wrap .// -->
 					</td>
-					<td class="text-right"> 
-						<a href="/winkelwagen/destroy/{{$getBasketItem->product_id}}/{{$getBasketItem->aantal}}" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></a>
-					</td>
 				</tr>
 				@endforeach
 				@endif
@@ -80,7 +77,6 @@
 						<td></td>
 						<td></td>
 						<td>€{{$totaalprijs}}</td>
-						<td class="text-right"><a href="/winkelwagen/bestel" class="btn btn-outline-primary">Bestel</a></td>
 					</tr>
 				</tfoot>
 			</tbody>

@@ -1,5 +1,5 @@
 $primary-color: #00c0cb;
-$second-color: #f8770c;
+$second-color: #f28e0b;
 $light-text: #ABB0BE;
 
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,700);
@@ -18,7 +18,8 @@ body {
 }
 
 .lighter-text {
-  color: #ABB0BE;
+  color: white;
+//   color: #ABB0BE;
 }
 
 .main-color-text {
@@ -27,8 +28,9 @@ body {
 
 nav {
   padding: 20px 0 40px 0;
-  background: #eee;
+  background: #2f2e87 !important;
   font-size: 16px;
+  border-bottom: 3px solid #f28e0b; 
   
   .navbar-left {
     float: left;
@@ -43,12 +45,16 @@ nav {
    a {
     display: inline;
     padding-left: 20px;
-    color: #777777;
+    color: white;
     text-decoration: none;
 
     &:hover {
       color: black;
     }
+  }
+
+  .Tekst-color:hover{
+      color: #f28e0b !important;
   }
 }
 

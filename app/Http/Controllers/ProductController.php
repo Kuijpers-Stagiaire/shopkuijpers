@@ -48,7 +48,25 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $sstring = array();
+        for ($i=1; $i <= 4; $i++) {
+            if ($request->extra_info_[$i] != null){
+                array_push($sstring, $request->extra_info_[$i]);
+            }
+        }
         
+        $sstring = serialize($sstring);
+        Product::insert([
+            'leverancier_id'=>'',
+            'product_naam'=>'',
+            'product_aantal'=>'',
+            'prodcut_prijs'=>'',
+            'product_merk'=>'',
+            'product_serie'=>'',
+            'product_model'=>'',
+            'product_omschrijving'=>'',
+            'product_extra_informatie'=>$sstring,
+        ]);
     }
 
     /**

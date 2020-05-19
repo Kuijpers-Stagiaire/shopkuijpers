@@ -12960,7 +12960,7 @@ body {
 }
 
 .lighter-text {
-  color: #ABB0BE;
+  color: white;
 }
 
 .main-color-text {
@@ -12969,8 +12969,9 @@ body {
 
 nav {
   padding: 20px 0 40px 0;
-  background: #eee;
+  background: #2f2e87 !important;
   font-size: 16px;
+  border-bottom: 3px solid #f28e0b;
 }
 
 nav .navbar-left {
@@ -12985,12 +12986,16 @@ nav .navbar-right {
 nav a {
   display: inline;
   padding-left: 20px;
-  color: #777777;
+  color: white;
   text-decoration: none;
 }
 
 nav a:hover {
   color: black;
+}
+
+nav .Tekst-color:hover {
+  color: #f28e0b !important;
 }
 
 .container {
@@ -13110,7 +13115,7 @@ nav a:hover {
 }
 
 .button-diff {
-  background: #f8770c;
+  background: #f28e0b;
   color: white;
   text-align: center;
   padding: 12px;
@@ -13123,7 +13128,7 @@ nav a:hover {
 }
 
 .button-diff:hover {
-  background: #f87f1b;
+  background: #f49518;
 }
 
 .button-diff i {
@@ -13134,6 +13139,118 @@ nav a:hover {
   content: "";
   display: table;
   clear: both;
+}
+
+.productimage {
+  height: auto;
+  width: 300px;
+}
+
+.opslaan {
+  background-color: #f28e0b;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.annuleren {
+  width: 100%;
+}
+
+.fotocontainer {
+  margin: 0 auto !important;
+}
+
+.formcontainer {
+  margin: 0 auto !important;
+}
+
+/**
+ * Panels
+ */
+
+/*** General styles ***/
+
+.panel {
+  box-shadow: none;
+}
+
+.panel-heading {
+  border-bottom: 0;
+}
+
+.panel-title {
+  font-size: 17px;
+}
+
+.panel-title > small {
+  font-size: 0.75em;
+  color: #999999;
+}
+
+.panel-body *:first-child {
+  margin-top: 0;
+}
+
+.panel-footer {
+  border-top: 0;
+}
+
+.panel-default > .panel-heading {
+  color: #333333;
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, 0.07);
+}
+
+form label {
+  color: #999999;
+  font-weight: 400;
+}
+
+.form-horizontal .form-group {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+@media (min-width: 768px) {
+  .form-horizontal .control-label {
+    text-align: right;
+    margin-bottom: 0;
+    padding-top: 7px;
+  }
+}
+
+.profile__contact-info-icon {
+  float: left;
+  font-size: 18px;
+  color: #999999;
+}
+
+.profile__contact-info-body {
+  overflow: hidden;
+  padding-left: 20px;
+  color: #999999;
+}
+
+.profile-avatar {
+  width: 200px;
+  position: relative;
+  margin: 0px auto;
+  margin-top: 196px;
+  border: 4px solid #f3f3f3;
+}
+
+.profielcontainer {
+  width: 100%;
+  margin: 0 auto !important;
+}
+
+.LabelLookAlike {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.LabelLookAlike:focus {
+  outline-width: 0;
 }
 
 /*!

@@ -7,6 +7,8 @@ use App\winkelwagen;
 use App\Bestellingen;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\BestellingMail;
+use Illuminate\Support\Facades\Mail;
 
 class WinkelWagenController extends Controller
 {
@@ -99,6 +101,37 @@ class WinkelWagenController extends Controller
         else{
             winkelwagen::where([['product_id', $product],['user_id',Auth::user()->id]])->update(['aantal'=> $aantal]);
         }
+        return redirect()->back();
+    }
+
+    public function sendmail(){
+        // BestellingMail::send()
+        $getBasket = DB::table('winkelwagen')
+        ->select('products.*', 'winkelwagen.aantal', 'winkelwagen.product_id')
+        ->join('products', 'product_id', '=', 'products.id')
+        ->where('winkelwagen.user_id', '=', Auth::user()->id)
+        ->get();
+
+        $totaalprijs = 0;
+        foreach($getBasket as $productprijs){
+            $tempprice = $productprijs->aantal * $productprijs->product_prijs;
+            $totaalprijs += $tempprice;
+        }
+        $totaalprijs = number_format((float)$totaalprijs, 2, '.', '');
+
+        foreach($getBasket as $product){
+            bestellingen::insert([
+                'product_id' => $product->id,
+                'user_id'=> Auth::user()->id,
+                'aantal'=> $product->aantal,
+                'totaal_prijs'=> number_format((float)$product->aantal * $product->product_prijs, 2, '.', ''),
+                "created_at" =>  \Carbon\Carbon::now(), # new \Datetime()
+                "updated_at" => \Carbon\Carbon::now(),
+            ]);
+        }
+
+        Mail::to(Auth::user()->email)->send(new BestellingMail());
+
         return redirect()->back();
     }
 

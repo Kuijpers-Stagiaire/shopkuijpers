@@ -1,11 +1,13 @@
 <nav>
     <div class="container">
-      <div class="navbar-left">
-        <a href="/producten">ShopKuijpers</a>
+      <div class="navbar-left" style="margin-top:-15px;">
+        <img src="{{asset('storage/Images/Logos/SKNoTekst.png')}}" style="height:50px">
+        <a style="padding-left:0px" class="Tekst-color" href="/producten">ShopKuijpers</a>
+        {{-- <img src="/storage/logos/ShopKuijpers.png"> --}}
       </div> <!--end navbar-left -->
   
       <div class="navbar-right">
-        <a href="/winkelwagen" id="cart"><i class="fa fa-shopping-cart"></i> Cart @if(count($headerData) != 0)<span class="badge">{{count($headerData)}}</span>@endif</a>
+        <a class="Tekst-color" href="/winkelwagen" id="cart"><i class="fa fa-shopping-cart"></i> Cart @if(count($headerData) != 0)<span class="badge">{{count($headerData)}}</span>@endif</a>
         <div class="shopping-cart">
           <div class="shopping-cart-header">
             <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">{{count($headerData)}}</span>

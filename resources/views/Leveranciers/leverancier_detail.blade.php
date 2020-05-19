@@ -1,6 +1,6 @@
 @extends('layouts.app')
 <head>
-	<title>{{$products->product_naam}} - ShopKuijpers</title>
+	<title>Leverancier informatie - ShopKuijpers</title>
 </head>
 @section('content')
 <div class="container productinfo">
@@ -29,7 +29,7 @@
 			</aside>
 			<aside class="col-sm-7">
 				<article class="card-body p-5">
-					<h3 class="title mb-3">{{$products->product_naam}}</h3>
+					<h3 class="title mb-3">{{$leverancier->Bedrijf_naam}}</h3>
 					<p class="price-detail-wrap"> 
 						<span class="price h3 text-warning"> 
 						<span class="currency">€</span><span class="num">{{$products->product_prijs}}</span>

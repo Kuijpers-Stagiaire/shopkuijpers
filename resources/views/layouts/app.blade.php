@@ -10,6 +10,7 @@
 		<script src="{{ asset('js/app.js') }}" defer></script>  
 		<!-- Styles -->
 		<link href="{{ asset('css/app.css?v=1.1') }}" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css?v=1.1') }}">
 		<!-- Fonts -->
 		<link rel="dns-prefetch" href="//fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
