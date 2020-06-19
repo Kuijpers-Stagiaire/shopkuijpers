@@ -8,7 +8,7 @@
 		@foreach($products as $product)
 		<div class="col-md-4">
 			<figure class="card card-product">
-				<div class="img-wrap"><img src="https://assets2.razerzone.com/images/razer-blade-pro-17/razer-blade-pro-17-2019-OGimage-1200x630.jpg"></div>
+				<div class="img-wrap"><img src="/storage/photos/{{$product->productimages}}"></div>
 				<figcaption class="info-wrap">
 					<h4 class="title">{{ $product->product_merk }} {{ $product->product_naam }}</h4>
                     <p class="desc">{{ $product->product_omschrijving }}</p>

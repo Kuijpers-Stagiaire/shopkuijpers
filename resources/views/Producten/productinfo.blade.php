@@ -11,17 +11,18 @@
 @endif
 	<div class="card">
 		<div class="row">
-			<aside class="col-sm-5 border-right">
+			<aside class="col-sm-5 ">
 				<article class="gallery-wrap">
 					<div class="img-big-wrap">
-						<a href="#"><img src="https://assets2.razerzone.com/images/razer-blade-pro-17/razer-blade-pro-17-2019-OGimage-1200x630.jpg"></a>
+						<img id="headImage" src="/storage/photos/{{$products->productHeadimage}}">
 					</div>
 					<!-- slider-product.// -->
 					<div class="img-small-wrap">
-						<div class="item-gallery"> <img src="https://assets2.razerzone.com/images/razer-blade-pro-17/razer-blade-pro-17-2019-OGimage-1200x630.jpg"> </div>
-						<div class="item-gallery"> <img src="https://assets2.razerzone.com/images/razer-blade-pro-17/razer-blade-pro-17-2019-OGimage-1200x630.jpg"> </div>
-						<div class="item-gallery"> <img src="https://assets2.razerzone.com/images/razer-blade-pro-17/razer-blade-pro-17-2019-OGimage-1200x630.jpg"> </div>
-						<div class="item-gallery"> <img src="https://assets2.razerzone.com/images/razer-blade-pro-17/razer-blade-pro-17-2019-OGimage-1200x630.jpg"> </div>
+						@if($products->productimages != "DefaultProductImage.jpg")
+							@foreach($products->productimages as $productimage)
+								<div class="item-gallery"> <img onclick="SwitchImage(this);" src="/storage/photos/{{$productimage}}"> </div>
+							@endforeach
+						@endif
 					</div>
 					<!-- slider-nav.// -->
 				</article>
@@ -96,3 +97,34 @@
 </div>
 <!--container.//-->
 @endsection
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+<script>
+// 	$(document).ready(function(){
+//     var $big= $(".img-big-wrap img");
+//     var $small = $('.item-gallery img');
+//     $big.not(':first').hide();
+//     $small.first().addClass('selected');
+    
+//     $small.click(function(e){
+//         $small.removeClass('selected');
+//         var i = $(this).addClass('selected').index();
+//         $big.hide().eq(i).show();
+//     });
+    
+//     $('.next, .prev').click(function() {
+//         var m = $(this).hasClass('next') ? 'next' : 'prev';
+//         var $t = $small.filter('.selected')[m]();
+//         if ($t.length) {
+//             $small.eq($t.index()).click();
+//         }
+//     });
+    
+// });
+SwitchImage = (imgs) => {
+	let headImage = document.getElementById('headImage');
+	headImage.src = imgs.src;
+}
+
+
+
+</script>

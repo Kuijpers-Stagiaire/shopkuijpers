@@ -44,6 +44,8 @@ Route::get('/producten/{id}/productinfo', 'ProductController@show');
 Route::get('/addproduct', function () {
     return view('Producten.addproduct');
 });
+Route::post('/producten/nieuw/store', ['middleware' => 'auth', 'uses' => 'ProductController@store']);
+
 
 
 
@@ -57,6 +59,9 @@ Route::get('/winkelwagen/bestel', 'WinkelWagenController@sendmail');
 //leverancier routes
 Route::get('/leveranciers', 'LeverancierController@index');
 Route::get('/leveranciers/{id}', 'LeverancierController@show');
+Route::get('/addleverancier', 'LeverancierController@create');
+Route::post('/leverancier/nieuw/store', ['middleware' => 'auth', 'uses' => 'LeverancierController@store']);
+
 
 //Bestelling Historie routes
 Route::get('/bestelling/geschiedenis', 'BestellingHistorieController@index');
@@ -66,6 +71,8 @@ Route::get('/bestelling/geschiedenis/info', 'BestellingHistorieController@show')
 // Route::get('/overzicht/addItem/{product}/', 'CartController@store');
 
 //user(profiel) routes 
-Route::get('/profiel', function () {
-    return view('users.profile');
-});
+Route::get('/profiel', 'GebruikerSysteemController@index');
+Route::post('/profiel/{id}/opslaan', 'GebruikerSysteemController@update');\
+
+//Export
+Route::get('/export', 'CsvController@export');

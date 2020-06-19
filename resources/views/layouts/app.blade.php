@@ -8,6 +8,7 @@
 		<title>Login - ShopKuijpers</title>
 		<!-- Scripts -->
 		<script src="{{ asset('js/app.js') }}" defer></script>  
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<!-- Styles -->
 		<link href="{{ asset('css/app.css?v=1.1') }}" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css?v=1.1') }}">

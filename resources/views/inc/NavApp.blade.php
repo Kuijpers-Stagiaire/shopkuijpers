@@ -1,7 +1,7 @@
 <nav>
     <div class="container">
       <div class="navbar-left" style="margin-top:-15px;">
-        <img src="{{asset('storage/Images/Logos/SKNoTekst.png')}}" style="height:50px">
+        <img src="{{asset('storage/Images/Logos/ShopKuijpers.png')}}" style="height:50px">
         <a style="padding-left:0px" class="Tekst-color" href="/producten">ShopKuijpers</a>
         {{-- <img src="/storage/logos/ShopKuijpers.png"> --}}
       </div> <!--end navbar-left -->

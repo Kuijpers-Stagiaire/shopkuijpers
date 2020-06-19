@@ -15,7 +15,7 @@
             </div>
             <div class="login-section-left-1-header-2">
                 <div style="margin-top: -30px;">
-                    <img src="{{ asset('img/icons/icon-512x512.png') }}" width="50">
+                    <img src="{{asset('storage/Images/Logos/ShopKuijpers.png')}}" width="50">
                 </div>
                 <div>
                     <p>Shopkuijpers</p>
