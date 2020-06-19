@@ -32,9 +32,9 @@ Route::get('/testhome', function () {
 //     return view('Producten.productdesign');
 // });
 
-// Route::get('/productinfo', function () {
-//     return view('Producten.productinfo');
-// });
+Route::get('/addproduct', function () {
+    return view('Producten.addproduct');
+});
 
 
 
